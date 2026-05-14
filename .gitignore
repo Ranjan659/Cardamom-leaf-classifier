@@ -216,3 +216,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# Ignore all data & heavy files
+data/
+*.jpg
+*.png
+*.jpeg
+*.zip
+*.tar
+checkpoints/
+*.pt
+*.pth
+__pycache__/
+.ipynb_checkpoints/
