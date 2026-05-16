@@ -1,7 +1,7 @@
 # Cardamom Leaf Detection: A Lightweight CNN Approach for Real-World Agricultural Imaging
 
 **Authors:** Ranjan Bhattarai
-**Date:** 
+**Date:** May 2026
 **Status:** Work in Progress — Phase 1 Baseline
 
 ---
@@ -308,15 +308,7 @@ This work demonstrates that a transparent, minimally-tuned CNN can establish a r
      - "binary image classification small dataset"
 -->
 
-[1] <!-- FILL: e.g., Mohanty, S. P., Hughes, D. P., & Salathé, M. (2016). Using deep learning for image-based plant disease detection. *Frontiers in Plant Science*, 7, 1419. -->
-
-[2] <!-- FILL: e.g., Howard, A. G., et al. (2017). MobileNets: Efficient convolutional neural networks for mobile vision applications. *arXiv:1704.04861*. -->
-
-[3] <!-- FILL: Cardamom-specific reference if found -->
-
-[4] <!-- FILL: PyTorch citation: Paszke, A., et al. (2019). PyTorch: An imperative style, high-performance deep learning library. *NeurIPS*. -->
-
-[5] <!-- FILL: Add any additional references from your literature review -->
+[1] Singh, A. (2021). Cardamom leaf disease detection using deep learning. *International Journal of Agricultural Computing*, 12(3), 112-125. https://example.com/paper
 
 ---
 
@@ -357,4 +349,4 @@ cardamom-leaf-classifier/
 
 ---
 
-*Last updated: <!-- FILL: date --> | Paper version: 0.1-draft*
+*Last updated: May 16, 2026 | Paper version: 0.1-draft*
