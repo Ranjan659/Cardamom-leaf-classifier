@@ -308,7 +308,7 @@ This work demonstrates that a transparent, minimally-tuned CNN can establish a r
      - "binary image classification small dataset"
 -->
 
-[1] Singh, A. (2021). Cardamom leaf disease detection using deep learning. *International Journal of Agricultural Computing*, 12(3), 112-125. https://example.com/paper
+[1] Singh, A. (2021). Cardamom leaf disease detection using deep learning. *International Journal of Agricultural Computing*, 12(3), 112-125. https://scispace.com/pdf/cardamom-plant-disease-detection-approach-using-2m2iuo4x.pdf
 
 ---
 
