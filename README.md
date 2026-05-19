@@ -33,7 +33,7 @@ Cardamom farmers need reliable tools to detect leaf anomalies in field condition
 
 **1. Clone the repo**
 ```bash
-git clone https://github.com/yourusername/cardamom-leaf-classifier
+git clone https://github.com/Ranjan659/cardamom-leaf-classifier
 cd cardamom-leaf-classifier
 ```
 
