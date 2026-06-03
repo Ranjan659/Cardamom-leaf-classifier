@@ -37,11 +37,50 @@ The remainder of this paper is organized as follows: Section 2 describes the dat
 
 ### 2.1 Collection Protocol
 
-Images were captured using Realme smarthone under natural daylight conditions between March - April, 2026. All images were taken in a cardamom plantation in Fikkal, Illam of Nepal.
+#### Field Visit: Fikkal, Illam, Nepal
 
-No artificial cropping, background removal, or studio lighting was applied, preserving field realism. Each image was captured at arm's length to simulate a handheld field-monitoring device.
+**Site Visit Details:**
+- **Location:** Fikkal, Illam District, Province 1, Nepal
+- **Dates:** [Add specific dates, e.g., "May 10-15, 2026"]
+- **Purpose:** Primary data collection and domain knowledge acquisition
+- **Total images captured:** ~200 cardamom leaf images in natural field conditions
 
-During image collection, several practical challenges were encountered, including varying lighting conditions caused by outdoor environments, shadows from surrounding plants, and slight motion blur due to wind movement. Additionally, overlapping leaves, complex natural backgrounds, and differences in leaf orientation and distance made consistent image capture difficult, increasing the realism and variability of the dataset.
+**Institutional Collaboration:**
+During the field visit, we visited the **अलैँची विकास केन्द्र (Cardamom Development Center)** in Illam, where we:
+- Consulted with agricultural experts and technical staff about cardamom cultivation practices
+- Learned about common diseases affecting cardamom plants in the region
+- Documented preferred growing conditions: altitude range [add if you learned it, e.g., "1000-1500m above sea level"]
+- Studied different cardamom varieties grown in the region
+- Observed planting techniques, maintenance practices, and pest management strategies
+- Learned about the center's annual training programs for farmers and technical staff
+
+**Key Personnel:**
+- Raju Dhakal, Acting Center Chief (Soil Scientist) - Cardamom Development Center, Ilam
+
+**Domain Insights Gained:**
+
+The consultation and field visit to Fikkal, Ilam, along with information from the Cardamom Development Center, provided important practical knowledge about large cardamom cultivation:
+
+1. **Disease patterns:** Common diseases affecting large cardamom include viral infections such as streak mosaic and stunted mosaic, fungal diseases such as leaf rust, rhizome rot, leaf rot, clump rot, and shooty mould, as well as pest infestations such as borers and other insect-related damage.
+
+2. **Growth conditions:** Large cardamom is generally cultivated in mid-hill regions at altitudes ranging from approximately 600 m to 2300 m. Different varieties are suited to specific altitude ranges and environmental conditions. The plants typically grow to an average height of 2–3 meters under suitable shade, moisture, and soil conditions.
+
+3. **Varietal differences:** Different varieties of cardamom such as Varlayang, Golsai, Dambarsai, Ramsai, and Jirmale are cultivated in different altitude ranges (e.g., low, mid, and high hills). These varieties may differ in adaptability, growth performance, and environmental suitability.
+
+4. **Cultivation practices:** Information was gathered regarding planting methods, field management, and care practices required for healthy growth and productivity of cardamom plants.
+
+5. **Farmer challenges:** Farmers face challenges such as disease identification, pest management, and maintaining crop health under varying environmental conditions, often requiring technical guidance.
+
+6. **Training and support:** The Cardamom Development Center (अलैँची विकास केन्द्र) provides regular training programs for both farmers and technical staff, focusing on disease management, cultivation practices, and improved production techniques. In addition, the center also supplies **cardamom seedlings** to farmers for cultivation, supporting plantation development and productivity improvement.
+
+These insights directly influenced our Phase 2 data collection priorities, particularly the inclusion of diverse lighting conditions, leaf ages, and disease symptoms.
+
+---
+
+**Image Capture Methodology:**
+
+Images were captured using a Canon EOS 4000D camera and a Realme smartphone under natural daylight conditions during field visits. The data collection was carried out between approximately 11:00 AM and 3:00–4:00 PM, ensuring adequate lighting for clear visibility of cardamom leaf structures and field conditions. Multiple angles and close-up shots were taken to capture detailed features of the plants for dataset preparation.
+
 
 ### 2.2 Class Composition
 
@@ -439,6 +478,20 @@ This work demonstrates a complete progression from overfitting baseline to gener
 | Phase 4 | Healthy vs. diseased classification | Multi-class (healthy, blight, leaf spot) | Planned |
 | Phase 5 | Grad-CAM interpretability | Visualize decision regions | Planned |
 | Phase 6 | Field deployment | Lightweight CLI/web demo | Planned |
+---
+
+## Acknowledgments
+
+We gratefully acknowledge the support and cooperation of:
+
+* **अलैँची विकास केन्द्र (Cardamom Development Center), Ilam** for providing access to field sites and sharing valuable domain expertise on cardamom cultivation practices and disease management.
+
+* **Raju Dhakal**, Acting Center Chief (Soil Scientist), for his time, insights, and guidance during the field visit to Fikkal, Ilam.
+
+* **Local farmers of Fikkal, Ilam** for allowing access to their cardamom plantations and sharing practical knowledge about cultivation challenges.
+
+This fieldwork was essential in shaping our understanding of real-world cardamom detection challenges and in informing our data collection strategy.
+
 ---
 
 ## References
