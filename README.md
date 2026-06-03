@@ -29,6 +29,24 @@ Cardamom farmers need reliable tools to detect leaf anomalies in field condition
 
 ---
 
+## 📊 Phase 2 Results (Complete ✅)
+
+| Metric | Value |
+|--------|-------|
+| Dataset | 260 real-world images (130 leaf, 130 not_leaf) |
+| Splits | 182 train / 38 val / 40 test (stratified) |
+| Augmentation | Random flip, rotation ±15°, brightness/contrast jitter |
+| Validation Accuracy | **97.4%** (37/38 correct) |
+| Best Validation Loss | 0.0196 |
+| Train-Val Gap | <0.05 (excellent generalization) |
+| Early Stopping | Triggered at epoch 10 (patience=5) |
+| Training Time | 406 seconds on CPU |
+
+📄 [Read the full technical report](docs/paper.md)  
+📈 [View Phase 2 training curves](docs/phase2_curves.png)
+
+---
+
 ## 🚀 Quick Start
 
 **1. Clone the repo**
@@ -76,7 +94,7 @@ cardamom-leaf-classifier/
 | Phase | Objective | Target | Status |
 |-------|-----------|--------|--------|
 | Phase 1 | Binary leaf detection baseline | N=60, no augmentation | ✅ Complete |
-| Phase 2 | Dataset expansion + validation | N=500+, stratified splits | 🟡 Planned |
+| Phase 2 | Dataset expansion + validation | N=250+, stratified splits | ✅ Complete |
 | Phase 3 | Healthy vs. diseased classification | Confirmed-leaf subset | ⚪ Future |
 | Phase 4 | Grad-CAM interpretability | Decision visualization | ⚪ Future |
 | Phase 5 | Field deployment | Lightweight CLI/web demo | ⚪ Future |
