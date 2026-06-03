@@ -1,8 +1,8 @@
 # 🌿 Cardamom Leaf Classifier
-
 > Progressive computer vision pipeline for cardamom leaf detection, health classification, and disease diagnosis using PyTorch.
 
-[![Phase](https://img.shields.io/badge/Phase-1%20Complete-blue)](docs/paper.md)
+[![Phase 1](https://img.shields.io/badge/Phase-1%20Complete-blue)](docs/paper.md)
+[![Phase 2](https://img.shields.io/badge/Phase-2%20Complete-brightgreen)](docs/paper.md)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.10-orange)](https://pytorch.org)
 
@@ -29,7 +29,7 @@ Cardamom farmers need reliable tools to detect leaf anomalies in field condition
 
 ---
 
-## 📊 Phase 2 Results (Complete ✅)
+## 📊 Phase 2 Results ✅
 
 | Metric | Value |
 |--------|-------|
@@ -38,11 +38,11 @@ Cardamom farmers need reliable tools to detect leaf anomalies in field condition
 | Augmentation | Random flip, rotation ±15°, brightness/contrast jitter |
 | Validation Accuracy | **97.4%** (37/38 correct) |
 | Best Validation Loss | 0.0196 |
-| Train-Val Gap | <0.05 (excellent generalization) |
+| Train-Val Gap | 0.11 → 0.05 (55% improvement) |
 | Early Stopping | Triggered at epoch 10 (patience=5) |
 | Training Time | 406 seconds on CPU |
 
-📄 [Read the full technical report](docs/paper.md)  
+📄 [Read the full technical report](docs/paper.md)
 📈 [View Phase 2 training curves](docs/phase2_curves.png)
 
 ---
@@ -73,15 +73,17 @@ pip install -r requirements.txt
 cardamom-leaf-classifier/
 ├── data/
 │   └── train/
-│       ├── leaf/           # 30 cardamom leaf images
-│       └── not_leaf/       # 30 negative images
+│       ├── leaf/           # 130 cardamom leaf images
+│       └── not_leaf/       # 130 negative images
 ├── docs/
-│   ├── paper.md            # Technical report
-│   └── training_curves.png
+│   ├── paper.md                # Technical report
+│   ├── training_curves.png     # Phase 1 curves
+│   └── phase2_curves.png       # Phase 2 curves
 ├── models/
 │   └── tiny_cardamom_cnn.py
 ├── notebooks/
-│   └── 01_data_setup_visualization.ipynb
+│   ├── 01_data_setup_visualization.ipynb   # Phase 2 training (updated)
+│   └── 02_data_splitting.ipynb             # Stratified 70/15/15 splits
 ├── train.py
 ├── requirements.txt
 └── README.md
@@ -94,7 +96,7 @@ cardamom-leaf-classifier/
 | Phase | Objective | Target | Status |
 |-------|-----------|--------|--------|
 | Phase 1 | Binary leaf detection baseline | N=60, no augmentation | ✅ Complete |
-| Phase 2 | Dataset expansion + validation | N=250+, stratified splits | ✅ Complete |
+| Phase 2 | Dataset expansion + validation | N=260, stratified splits | ✅ Complete |
 | Phase 3 | Healthy vs. diseased classification | Confirmed-leaf subset | ⚪ Future |
 | Phase 4 | Grad-CAM interpretability | Decision visualization | ⚪ Future |
 | Phase 5 | Field deployment | Lightweight CLI/web demo | ⚪ Future |
