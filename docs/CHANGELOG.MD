@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.2.0] - 2026-05-16 — Phase 2 Complete
+## [0.2.0] - 2026-06-02 — Phase 2 Complete
 ### Added
 - Dataset expanded to 260 images (130 per class)
 - Stratified 70/15/15 train/val/test splits
