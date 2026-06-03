@@ -71,22 +71,20 @@ pip install -r requirements.txt
 
 ```
 cardamom-leaf-classifier/
-├── data/
-│   └── train/
-│       ├── leaf/           # 130 cardamom leaf images
-│       └── not_leaf/       # 130 negative images
 ├── docs/
-│   ├── paper.md                # Technical report
-│   ├── training_curves.png     # Phase 1 curves
-│   └── phase2_curves.png       # Phase 2 curves
+│   ├── paper.md                    # Technical report
+│   ├── research_landscape.md       # Literature & research context
+│   ├── training_curves.png         # Phase 1 training curves
+│   └── phase2_curves.png           # Phase 2 training curves
 ├── models/
-│   └── tiny_cardamom_cnn.py
+│   └── .gitkeep
 ├── notebooks/
 │   ├── 01_data_setup_visualization.ipynb   # Phase 2 training (updated)
 │   └── 02_data_splitting.ipynb             # Stratified 70/15/15 splits
-├── train.py
-├── requirements.txt
-└── README.md
+├── .gitignore
+├── LICENSE
+├── README.md
+└── requirements.txt
 ```
 
 ---
