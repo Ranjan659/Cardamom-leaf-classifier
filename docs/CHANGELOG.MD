@@ -1,4 +1,4 @@
-## [0.2.0] - 2026-05-16 — Phase 2 Complete
+## [0.2.0] - 2026-06-02 — Phase 2 Complete
 
 ### Added
 - **Field visit to Fikkal, Ilam** for primary data collection
