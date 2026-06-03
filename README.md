@@ -14,32 +14,6 @@ Cardamom farmers need reliable tools to detect leaf anomalies in field condition
 
 ---
 
-## 🌍 Field Work & Data Collection
-
-**Site Visit:** Fikkal, Illam, Nepal  
-**Dates:** 26 May 2026 
-**Images Captured:** ~200 cardamom leaf images
-
-**Institutional Collaboration:**
-We visited the **अलैँची विकास केन्द्र (Cardamom Development Center)** in Illam, where we:
-- Consulted with agricultural experts about cardamom cultivation and diseases
-- Learned about preferred growing conditions, varieties, and maintenance practices
-- Documented real-world challenges faced by farmers
-- Observed training programs for farmers and technical staff
-
-**Domain Knowledge Gained:**
-- Common cardamom diseases and symptoms
-- Optimal altitude and growing conditions
-- Varietal differences in leaf characteristics
-- Seasonal variation patterns
-- Farmer detection challenges
-
-This field work directly informed our data collection strategy and model design decisions.
-
-**Acknowledgments:** We thank the Cardamom Development Center, Illam, and local farmers of Fikkal for their cooperation and expertise.
-
----
-
 ## 📊 Phase 1 Results
 
 | Metric | Value |
@@ -132,6 +106,28 @@ cardamom-leaf-classifier/
 ## 🤝 Contributing
 
 This is a learning project. Feedback welcome via Issues or Discussions.
+
+---
+
+## 📄 Full Technical Report
+
+[Read the complete paper with methodology, results, and field work documentation](docs/paper.md)
+
+---
+
+## 📚 Citation
+
+If you use this work in your research, please cite:
+
+```bibtex
+@misc{bhattarai2026cardamom,
+  title={Cardamom Leaf Detection: A Lightweight CNN Approach for Real-World Agricultural Imaging},
+  author={Bhattarai, Ranjan},
+  year={2026},
+  howpublished={\url{https://github.com/Ranjan659/cardamom-leaf-classifier}},
+  note={Phase 2 Complete}
+}
+```
 
 ---
 
