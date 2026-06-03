@@ -502,25 +502,21 @@ This fieldwork was essential in shaping our understanding of real-world cardamom
 
 ## Appendix A: Repository Structure
 
-<!-- FILL: Update this to match your actual project structure once files are created. -->
-
 ```
 cardamom-leaf-classifier/
-├── data/
-│   └── README.md                    # ← Dataset card (collection protocol, splits)
 ├── docs/
-│   ├── paper.md                     # ← Your main paper
-│   ├── research_landscape.md        # ← Already created
-│   └── data_card.md                 # ← Collection log (you mentioned this earlier)
+│   ├── paper.md                    # Technical report
+│   ├── research_landscape.md       # Literature & research context
+│   ├── training_curves.png         # Phase 1 training curves
+│   └── phase2_curves.png           # Phase 2 training curves
+├── models/
+│   └── .gitkeep
 ├── notebooks/
-│   ├── 01_data_setup_visualization.ipynb
-│   ├── 02_model_definition.ipynb
-│   └── 03_training_loop.ipynb       # ← Split by phase (not one giant notebook)
-├── src/
-│   └── models/
-│       └── tiny_cnn.py              # ← Extract model class to .py file (reusable)
+│   ├── 01_data_setup_visualization.ipynb   # Phase 2 training (updated)
+│   └── 02_data_splitting.ipynb             # Stratified 70/15/15 splits
 ├── .gitignore
-├── README.md                        # ← Project overview (not the paper!)
+├── LICENSE
+├── README.md
 └── requirements.txt
 ```
 
