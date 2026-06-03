@@ -1,6 +1,6 @@
 # Cardamom Leaf Detection: A Lightweight CNN Approach for Real-World Agricultural Imaging
 
-**Authors:** ABC
+**Authors:** Ranjan Bhattarai
 **Date:** May 2026
 **Status:** Work in Progress — Phase 2 Complete
 
@@ -41,7 +41,7 @@ The remainder of this paper is organized as follows: Section 2 describes the dat
 
 **Site Visit Details:**
 - **Location:** Fikkal, Illam District, Province 1, Nepal
-- **Dates:** [Add specific dates, e.g., "May 10-15, 2026"]
+- **Dates:** 26 May 2026
 - **Purpose:** Primary data collection and domain knowledge acquisition
 - **Total images captured:** ~200 cardamom leaf images in natural field conditions
 
@@ -49,7 +49,7 @@ The remainder of this paper is organized as follows: Section 2 describes the dat
 During the field visit, we visited the **अलैँची विकास केन्द्र (Cardamom Development Center)** in Illam, where we:
 - Consulted with agricultural experts and technical staff about cardamom cultivation practices
 - Learned about common diseases affecting cardamom plants in the region
-- Documented preferred growing conditions: altitude range [add if you learned it, e.g., "1000-1500m above sea level"]
+- Documented preferred growing conditions: altitude range 600-2300m.
 - Studied different cardamom varieties grown in the region
 - Observed planting techniques, maintenance practices, and pest management strategies
 - Learned about the center's annual training programs for farmers and technical staff
@@ -541,4 +541,4 @@ cardamom-leaf-classifier/
 
 ---
 
-*Last updated: May 16, 2026 | Paper version: 0.1-draft*
+*Last updated: June 2, 2026 | Paper version: 0.2.0 — Phase 2 Complete*
