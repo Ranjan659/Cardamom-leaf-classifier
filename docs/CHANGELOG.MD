@@ -17,3 +17,28 @@
 
 ### Fixed
 - Cleanup script in splitting notebook to prevent mixed train/validation/test splits
+
+
+
+## [0.3.0] - 2026-06-05 — Phase 3 Complete
+
+### Added
+- Dataset expanded to 522 images (261 per class)
+- Held-out test set evaluation (80 images)
+- ROC-AUC metric (0.988)
+- Confusion matrix visualization
+- 95% confidence intervals for accuracy
+- GPU support for faster training (6-12x speedup)
+
+### Results
+- **Test Accuracy: 96.25%** (95% CI: 92.09% - 100.41%)
+- **ROC-AUC: 0.988** (near-perfect discrimination)
+- **F1-Score: 0.963**
+- **Only 3 errors** (2 FP, 1 FN) out of 80 test images
+
+### Changed
+- Updated paper.md with Phase 3 test evaluation
+- Enhanced README with Phase 3 metrics
+- Added GPU support with device configuration
+- Optimized DataLoader for GPU (num_workers=2, pin_memory=True)
+- Improved test evaluation code organization
