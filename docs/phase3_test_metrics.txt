@@ -1,0 +1,18 @@
+
+PHASE 3 TEST RESULTS
+====================
+
+Dataset Size: 80
+
+Accuracy : 96.25%
+Precision: 0.951
+Recall   : 0.975
+F1 Score : 0.963
+ROC-AUC  : 0.988
+
+95% Confidence Interval:
+92.09% - 100.41%
+
+Confusion Matrix:
+[[38  2]
+ [ 1 39]]
