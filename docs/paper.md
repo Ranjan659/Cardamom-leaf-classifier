@@ -1,8 +1,10 @@
 # Cardamom Leaf Detection: A Lightweight CNN Approach for Real-World Agricultural Imaging
 
 **Authors:** Ranjan Bhattarai
+
 **Date:** May 2026
-**Status:** Work in Progress — Phase 2 Complete
+
+**Status:** Work in Progress — Phase 3 Complete
 
 ---
 
@@ -460,18 +462,33 @@ With 80 test images, we achieve a 95% confidence interval of ±4.16%, providing 
 7. **Statistical reliability achieved:** 38 validation images provide smooth, trustworthy curves (±2.5% swings)
 8. **Real-world robustness:** Model achieves 97.4% accuracy on diverse field-captured images with varied lighting, angles, and backgrounds
 
-**Overall Conclusion:** The combination of dataset expansion (60 → 260 images), stratified splits, augmentation, and early stopping transformed a memorizing model into a generalizing system suitable for real-world deployment.
+#### Phase 3 Insights
+9. **Test set evaluation achieved**: 96.25% accuracy on 80 held-out images (never seen during training)
+10. **Statistical significance confirmed**: 95% confidence interval (92.09% - 100.41%) with 80 test images
+11. **Near-perfect discrimination**: ROC-AUC of 0.988 indicates excellent separation between classes
+12. **Balanced performance**: Precision (0.951) ≈ Recall (0.975) → reliable across both classes
+13. **Minimal errors**: Only 3/80 test images misclassified (2 FP, 1 FN) → 3.75% error rate
+14. **GPU acceleration validated**: Training time reduced from ~360s (CPU) to ~60s (GPU) → 6x speedup
+
+**Overall Conclusion (Phase 3):** The progression from 60 → 260 → 522 images, combined with stratified splits, augmentation, early stopping, and unbiased test evaluation, has produced a statistically reliable, generalizing model suitable for real-world agricultural deployment.
 
 
 ### 5.2 Limitations
 
-| Limitation | Impact | Mitigation (Phase 2) |
-|------------|--------|----------------------|
-| N=60 dataset | High variance; metrics not statistically reliable | Expand to 500+ images |
-| No validation split | Cannot detect overfitting | Add stratified val/test split |
-| No augmentation | Model may not generalize to unseen lighting/angles | Add rotation, brightness, cutout |
-| Single geographic location | Seasonal/regional appearance variation unmodeled | Multi-location collection |
-| No Grad-CAM | Cannot verify what features drive predictions | Implement in Phase 2 |
+| Limitation | Impact | Mitigation (Status) |
+|------------|--------|-------------------|
+| Single geographic location (Fikkal, Illam) | Seasonal/regional appearance variation unmodeled | ⚪ Multi-location collection (Phase 4) |
+| Binary classification only | Cannot distinguish healthy vs. diseased leaves | ⚪ Multi-class expansion (Phase 4) |
+| No interpretability tools | Cannot verify which features drive predictions | ⚪ Grad-CAM integration (Phase 5) |
+| CPU inference only in documentation | Field deployment speed not benchmarked | ⚪ Edge device testing (Phase 6) |
+| Limited disease examples | Model not trained on diseased leaf patterns | ⚪ Disease-specific data collection (Phase 4) |
+
+**Resolved Limitations (Phases 1-3):**
+✅ Small dataset (N=60) → Expanded to 522 images  
+✅ No validation split → Added stratified 70/15/15 splits  
+✅ No augmentation → Implemented flip, rotation, jitter  
+✅ No test evaluation → Held-out test set with confidence intervals  
+✅ CPU-only training → GPU acceleration validated (6x speedup)
 
 ### 5.3 Comparison to Baselines
 
@@ -487,27 +504,33 @@ With 80 test images, we achieve a 95% confidence interval of ±4.16%, providing 
 
 ## 6. Conclusion and Future Work
 
-This work demonstrates a complete progression from overfitting baseline to generalizing system for cardamom leaf detection. Phase 1 (60 images) revealed severe memorization (100% train accuracy, 87.5% validation accuracy), motivating systematic improvements: dataset expansion to 260 images, stratified train/validation/test splits, data augmentation, and early stopping regularization.
+This work demonstrates a complete progression from overfitting baseline to statistically validated generalizing system for cardamom leaf detection. 
 
-**Phase 2 achieved:**
-- **97.4% validation accuracy** on 38 held-out images
-- **Train-validation gap <0.05** (vs. 0.11 in Phase 1)
-- **Smooth, stable curves** demonstrating reliable generalization
-- **Early stopping** preventing overfitting
-- **Statistical significance** with 260 images and proper splits
+**Phase progression:**
+- **Phase 1 (60 images)**: Diagnosed severe memorization (100% train, 87.5% val accuracy)
+- **Phase 2 (260 images)**: Achieved 97.4% validation accuracy with augmentation + early stopping
+- **Phase 3 (522 images)**: Achieved **96.25% test accuracy** (95% CI: 92.09%-100.41%) with ROC-AUC 0.988
 
-**Key contribution:** A reproducible, documented pipeline that scales from toy dataset (60 images) to research-grade dataset (260 images), with transparent methodology suitable for academic publication and field deployment.
+**Key achievements:**
+- ✅ **Statistical significance**: 80-image test set with confidence intervals
+- ✅ **Near-perfect discrimination**: ROC-AUC 0.988
+- ✅ **Balanced performance**: Precision 0.951, Recall 0.975, F1 0.963
+- ✅ **Minimal errors**: Only 3/80 test images misclassified
+- ✅ **Reproducible pipeline**: From field collection to unbiased evaluation
+- ✅ **Domain integration**: Collaboration with Cardamom Development Center, Illam
+
+**Key contribution:** A reproducible, documented pipeline that scales from toy dataset (60 images) to research-grade evaluation (522 images, unbiased test set), with transparent methodology suitable for academic publication and real-world agricultural deployment.
 
 ### Future Work (Roadmap)
 
 | Phase | Objective | Target | Status |
 |-------|-----------|--------|--------|
 | Phase 1 ✅ | Binary leaf detection baseline | N=60, no augmentation | Complete (memorization diagnosed) |
-| Phase 2 ✅ | Dataset expansion + validation | N=260, augmentation, early stopping | **Complete (97.4% val accuracy)** |
-| Phase 3 | Dataset expansion to 500+ | N=500+, test set evaluation | Planned |
-| Phase 4 | Healthy vs. diseased classification | Multi-class (healthy, blight, leaf spot) | Planned |
-| Phase 5 | Grad-CAM interpretability | Visualize decision regions | Planned |
-| Phase 6 | Field deployment | Lightweight CLI/web demo | Planned |
+| Phase 2 ✅ | Dataset expansion + validation | N=260, augmentation, early stopping | Complete (97.4% val accuracy) |
+| Phase 3 ✅ | Unbiased test evaluation | N=522, held-out test set, confidence intervals | **Complete (96.25% test accuracy, ROC-AUC 0.988)** |
+| Phase 4 | Healthy vs. diseased classification | Multi-class (healthy, blight, leaf spot) | ⚪ Planned |
+| Phase 5 | Grad-CAM interpretability | Visualize decision regions | ⚪ Planned |
+| Phase 6 | Field deployment | Lightweight CLI/web demo with edge inference | ⚪ Planned |
 ---
 
 ## Acknowledgments
@@ -535,10 +558,12 @@ This fieldwork was essential in shaping our understanding of real-world cardamom
 ```
 cardamom-leaf-classifier/
 ├── docs/
-│   ├── paper.md                    # Technical report
-│   ├── research_landscape.md       # Literature & research context
-│   ├── training_curves.png         # Phase 1 training curves
-│   └── phase2_curves.png           # Phase 2 training curves
+│   ├── paper.md                         # Technical report
+│   ├── research_landscape.md            # Literature & research context
+│   ├── training_curves.png              # Phase 1 training curves
+│   ├── phase2_curves.png                # Phase 2 training curves
+│   ├── phase3_confusion_matrix.png      # Phase 3 confusion matrix 
+│   └── phase3_test_metrics.txt          # Phase 3 test metrics 
 ├── models/
 │   └── .gitkeep
 ├── notebooks/
@@ -567,4 +592,4 @@ cardamom-leaf-classifier/
 
 ---
 
-*Last updated: June 2, 2026 | Paper version: 0.2.0 — Phase 2 Complete*
+*Last updated: June 5, 2026 | Paper version: 0.3.1 — Phase 3 Complete*
