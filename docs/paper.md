@@ -412,6 +412,36 @@ The presence of low-confidence correct predictions suggests the model is learnin
 
 **Conclusion:** Phase 1 confirms the pipeline functions end-to-end. Phase 2 will introduce validation splits, augmentation, and regularization to shift from memorization to generalization.
 
+### 4.5 Test Set Evaluation (Phase 3)
+
+**Dataset:** 522 images (261 per class)  
+**Splits:** 364 train / 78 validation / 80 test (70/15/15)  
+**Training device:** GPU (NVIDIA Tesla T4, 15GB VRAM) via Google Colab 
+
+**Results:**
+
+| Metric | Value | 95% Confidence Interval |
+|--------|-------|------------------------|
+| Accuracy | 96.25% | 92.09% - 100.41% |
+| Precision | 0.951 | — |
+| Recall | 0.975 | — |
+| F1-Score | 0.963 | — |
+| ROC-AUC | 0.988 | — |
+
+**Confusion Matrix:**  
+![Phase 3 confusion matrix](./phase3_confusion_matrix.png)  
+*Caption: Test set confusion matrix showing 77/80 correct predictions (96.25% accuracy). The model demonstrates excellent discrimination with ROC-AUC of 0.988.*
+
+**Error Analysis:**
+- **False Positives:** 2 images (not_leaf misclassified as leaf)
+- **False Negatives:** 1 image (leaf misclassified as not_leaf)
+- **Total Errors:** 3/80 (3.75% error rate)
+
+**Interpretation:**  
+The model achieves excellent generalization with near-perfect ROC-AUC (0.988), indicating strong discrimination between cardamom leaves and non-leaf backgrounds. The balanced precision (0.951) and recall (0.975) demonstrate reliable performance across both classes, making it suitable for real-world deployment.
+
+**Statistical Significance:**  
+With 80 test images, we achieve a 95% confidence interval of ±4.16%, providing statistically reliable performance estimates suitable for academic publication and field deployment.
 ---
 
 ## 5. Discussion
