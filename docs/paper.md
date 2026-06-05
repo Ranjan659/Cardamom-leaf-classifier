@@ -10,9 +10,10 @@
 
 ## Abstract
 
-Accurate identification of cardamom leaves in uncontrolled field conditions remains a bottleneck for automated plant health monitoring. This work presents a binary classification pipeline (`leaf` vs `not_leaf`) using a lightweight 3-layer Convolutional Neural Network (~50,000 parameters) trained on a custom dataset of 260 real-world images with stratified train/validation/test splits. We document the complete workflow from dataset construction through Phase 2 expansion, emphasizing reproducibility, real-world negative sampling, data augmentation, and early stopping regularization.
 
-Phase 1 (60 images) revealed severe overfitting (100% train accuracy, 87.5% validation accuracy), motivating dataset expansion to 260 images with augmentation and proper validation monitoring. Phase 2 achieved 97.4% validation accuracy with a train-validation gap of <0.05, demonstrating successful generalization. This work establishes a reproducible baseline and transparent methodology for future disease-specific classification.
+Accurate identification of cardamom leaves in uncontrolled field conditions remains a bottleneck for automated plant health monitoring. This work presents a binary classification pipeline (`leaf` vs `not_leaf`) using a lightweight 3-layer Convolutional Neural Network (~50,000 parameters) trained on a custom dataset of **522 real-world images** with stratified train/validation/test splits. We document the complete workflow from dataset construction through **Phase 3 expansion**, emphasizing reproducibility, real-world negative sampling, data augmentation, early stopping regularization, **and unbiased test evaluation**.
+
+Phase 1 (60 images) revealed severe overfitting (100% train accuracy, 87.5% validation accuracy), motivating dataset expansion to 260 images with augmentation and proper validation monitoring. Phase 2 achieved 97.4% validation accuracy with a train-validation gap of <0.05. **Phase 3 achieved 96.25% test accuracy (95% CI: 92.09%-100.41%) with ROC-AUC 0.988**, demonstrating statistically reliable generalization suitable for real-world deployment. This work establishes a reproducible baseline and transparent methodology for future disease-specific classification.
 
 **Keywords:** Cardamom, leaf detection, binary classification, convolutional neural network, agricultural computer vision, edge deployment
 
@@ -577,18 +578,47 @@ cardamom-leaf-classifier/
 
 ## Appendix B: Reproducibility Checklist
 
+### Core Reproducibility
 - [x] Random seed fixed: `torch.manual_seed(42)`
-- [x] Dataset folder structure documented
-- [x] Label mapping documented (`leaf=1`, `not_leaf=0`)
+- [x] Dataset folder structure documented (`raw/`, `train/`, `val/`, `test/`)
+- [x] Label mapping documented (`leaf → 1`, `not_leaf → 0`)
 - [x] All hyperparameters listed in Section 3.2
-- [x] Training environment logged (Section 4.1)
-- [x] Model weights saved after training
-- [x] Loss values logged to CSV or TensorBoard
-- [x] Stratified splits implemented (70/15/15)
-- [x] Data augmentation documented (Section 2.5)
-- [x] Early stopping implemented (patience=5)
-- [x] Phase 1 → Phase 2 progression documented
-- [x] Training curves saved and embedded (Figures 1 & 2)
+- [x] Training environment logged (Section 4.1: CPU/GPU specs, PyTorch version)
+- [x] Model weights saved after training (`best_model.pt`, `phase1_baseline.pt`)
+- [x] Loss values logged per epoch (printed + saved to `phase3_test_metrics.txt`)
+
+### Data Management
+- [x] Stratified splits implemented (70/15/15) with seed=42
+- [x] Data augmentation documented (Section 2.5: flip, rotation, jitter)
+- [x] Train/val/test sets kept strictly separate (no leakage)
+- [x] Test set never used during training or hyperparameter tuning
+
+### Evaluation Rigor
+- [x] Early stopping implemented (patience=5, monitor val loss)
+- [x] Held-out test set evaluation (80 images, never seen during training)
+- [x] Multiple metrics reported: Accuracy, Precision, Recall, F1, ROC-AUC
+- [x] 95% confidence intervals calculated for test accuracy
+- [x] Confusion matrix generated and saved (`phase3_confusion_matrix.png`)
+- [x] Error analysis performed (false positives/negatives counted)
+
+### Documentation & Versioning
+- [x] Phase 1 → Phase 2 → Phase 3 progression documented
+- [x] Training curves saved and embedded (Figures 1, 2, and confusion matrix)
+- [x] CHANGELOG.md maintained with versioned releases (v0.2.0, v0.3.0, v0.3.1)
+- [x] GitHub Release v0.3.1 published with full results and artifacts
+- [x] Field work documentation included (location, institutional partner, domain insights)
+
+### Code Quality
+- [x] GPU/CPU device configuration implemented (`device = torch.device(...)`)
+- [x] DataLoader optimized for GPU (`num_workers=2`, `pin_memory=True`)
+- [x] Local dataset copying implemented to prevent Drive crashes
+- [x] Notebook cells well-commented with markdown explanations
+- [x] Requirements listed in `requirements.txt`
+
+### Future Reproducibility
+- [ ] Grad-CAM interpretability integration (Phase 5)
+- [ ] Multi-location data collection (Phase 4)
+- [ ] Edge device inference benchmarking (Phase 6)
 
 ---
 
