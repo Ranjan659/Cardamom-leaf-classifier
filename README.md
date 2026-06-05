@@ -47,6 +47,22 @@ Cardamom farmers need reliable tools to detect leaf anomalies in field condition
 
 ---
 
+## 📊 Phase 3 Results ✅
+
+| Metric | Value |
+|--------|-------|
+| Dataset | **522 images** (261 per class) |
+| Splits | 364 train / 78 val / **80 test** |
+| **Test Accuracy** | **96.25%** (95% CI: 92.09% - 100.41%) |
+| **ROC-AUC** | **0.988** (near-perfect discrimination) |
+| Precision | 0.951 |
+| Recall | 0.975 |
+| F1-Score | 0.963 |
+| Errors | **3/80** (2 FP, 1 FN) |
+| Training Time | ~60s (GPU) / ~360s (CPU) |
+
+---
+
 ## 🚀 Quick Start
 
 **1. Clone the repo**
