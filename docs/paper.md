@@ -13,7 +13,7 @@
 
 Accurate identification of cardamom leaves in uncontrolled field conditions remains a bottleneck for automated plant health monitoring. This work presents a binary classification pipeline (`leaf` vs `not_leaf`) using a lightweight 3-layer Convolutional Neural Network (~50,000 parameters) trained on a custom dataset of **522 real-world images** with stratified train/validation/test splits. We document the complete workflow from dataset construction through **Phase 3 expansion**, emphasizing reproducibility, real-world negative sampling, data augmentation, early stopping regularization, **and unbiased test evaluation**.
 
-Phase 1 (60 images) revealed severe overfitting (100% train accuracy, 87.5% validation accuracy), motivating dataset expansion to 260 images with augmentation and proper validation monitoring. Phase 2 achieved 97.4% validation accuracy with a train-validation gap of <0.05. **Phase 3 achieved 96.25% test accuracy (95% CI: 92.09%-100.41%) with ROC-AUC 0.988**, demonstrating statistically reliable generalization suitable for real-world deployment. This work establishes a reproducible baseline and transparent methodology for future disease-specific classification.
+Phase 1 (60 images) revealed severe overfitting (100% train accuracy, 87.5% validation accuracy), motivating dataset expansion to 260 images with augmentation and proper validation monitoring. Phase 2 achieved 97.4% validation accuracy with a train-validation gap of <0.05. **Phase 3 achieved 96.25% test accuracy (95% CI: 92.09%-100.41%), with ROC-AUC 0.988**, demonstrating statistically reliable generalization suitable for real-world deployment. This work establishes a reproducible baseline and transparent methodology for future disease-specific classification.
 
 **Keywords:** Cardamom, leaf detection, binary classification, convolutional neural network, agricultural computer vision, edge deployment
 
@@ -263,13 +263,13 @@ for epoch in range(NUM_EPOCHS):
 
 ### 4.1 Environment
 
-| Component | Specification |
-|-----------|--------------|
-| Hardware | CPU: x86_64 (1 physical core / 2 logical cores), 12.7 GB RAM, No GPU |
-| OS | Linux 6.6.122+ |
-| Python | 3.12.13 |
-| PyTorch | 2.10.0+cpu |
-| Training device | CPU |
+| Component | Phase 1-2 | Phase 3 |
+|-----------|-----------|---------|
+| Hardware | CPU: x86_64 (1 core / 2 logical), 12.7 GB RAM | GPU: NVIDIA Tesla T4 (15GB VRAM) via Google Colab |
+| OS | Linux 6.6.122+ | Linux 6.6.122+ |
+| Python | 3.12.13 | 3.12.13 |
+| PyTorch | 2.10.0+cpu | 2.10.0+cu118 |
+| Training device | CPU | GPU (with CPU fallback) |
 
 ### 4.2 Training Dynamics
 
