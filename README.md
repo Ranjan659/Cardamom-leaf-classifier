@@ -3,6 +3,7 @@
 
 [![Phase 1](https://img.shields.io/badge/Phase-1%20Complete-blue)](docs/paper.md)
 [![Phase 2](https://img.shields.io/badge/Phase-2%20Complete-brightgreen)](docs/paper.md)
+[![Phase 3](https://img.shields.io/badge/Phase-3%20Complete-success)](docs/paper.md)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.10-orange)](https://pytorch.org)
 
@@ -88,10 +89,12 @@ pip install -r requirements.txt
 ```
 cardamom-leaf-classifier/
 ├── docs/
-│   ├── paper.md                    # Technical report
-│   ├── research_landscape.md       # Literature & research context
-│   ├── training_curves.png         # Phase 1 training curves
-│   └── phase2_curves.png           # Phase 2 training curves
+│   ├── paper.md                         # Technical report
+│   ├── research_landscape.md            # Literature & research context
+│   ├── training_curves.png              # Phase 1 training curves
+│   ├── phase2_curves.png                # Phase 2 training curves
+│   ├── phase3_confusion_matrix.png      # Phase 3 confusion matrix 
+│   └── phase3_test_metrics.txt          # Phase 3 test metrics 
 ├── models/
 │   └── .gitkeep
 ├── notebooks/
@@ -111,9 +114,10 @@ cardamom-leaf-classifier/
 |-------|-----------|--------|--------|
 | Phase 1 | Binary leaf detection baseline | N=60, no augmentation | ✅ Complete |
 | Phase 2 | Dataset expansion + validation | N=260, stratified splits | ✅ Complete |
-| Phase 3 | Healthy vs. diseased classification | Confirmed-leaf subset | ⚪ Future |
-| Phase 4 | Grad-CAM interpretability | Decision visualization | ⚪ Future |
-| Phase 5 | Field deployment | Lightweight CLI/web demo | ⚪ Future |
+| Phase 3 | Unbiased test evaluation | N=522, held-out test set | ✅ **Complete** |
+| Phase 4 | Healthy vs. diseased classification | Multi-class (healthy, blight, leaf spot) | ⚪ Future |
+| Phase 5 | Grad-CAM interpretability | Visualize decision regions | ⚪ Future |
+| Phase 6 | Field deployment | Lightweight CLI/web demo | ⚪ Future |
 
 ---
 
@@ -139,7 +143,7 @@ If you use this work in your research, please cite:
   author={Bhattarai, Ranjan},
   year={2026},
   howpublished={\url{https://github.com/Ranjan659/cardamom-leaf-classifier}},
-  note={Phase 2 Complete}
+  note={Phase 3 Complete — v0.3.1}
 }
 ```
 
