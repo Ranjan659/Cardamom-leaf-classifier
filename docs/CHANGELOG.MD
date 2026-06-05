@@ -42,3 +42,13 @@
 - Added GPU support with device configuration
 - Optimized DataLoader for GPU (num_workers=2, pin_memory=True)
 - Improved test evaluation code organization
+
+
+## [0.3.1] - 2026-06-05
+
+### Added
+- Phase 3 confusion matrix visualization
+- Phase 3 test metrics report
+
+### Documentation
+- Added evaluation artifacts used in final reporting and release materials
